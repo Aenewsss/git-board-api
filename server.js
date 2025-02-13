@@ -14,7 +14,7 @@ const CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 
 // Rota para iniciar o login via GitHub
 app.get("/login/github", (req, res) => {
-    const redirect_uri = "http://https://git-board-ai-6dce65bdb713.herokuapp.com/callback";
+    const redirect_uri = "http://git-board-ai-6dce65bdb713.herokuapp.com/callback";
     const redirectUri = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=read:org,read:project,project&redirect_uri=${redirect_uri}`;
     res.redirect(redirectUri);
 });
