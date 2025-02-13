@@ -7,6 +7,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const PORT = process.env.PORT || 3000;
+
 const CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 
@@ -44,4 +46,4 @@ app.get("/callback", async (req, res) => {
     }
 });
 
-app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
+app.listen(PORT, () => console.log("Servidor rodando na porta 3000"));
